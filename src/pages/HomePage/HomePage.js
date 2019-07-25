@@ -11,8 +11,14 @@ import HotProduct from '../../components/HotProduct';
 import Article from '../../components/Article';
 import ProductBlock from '../../components/ProductBlock';
 import Footer from '../../components/Footer';
+import { actFetchProductsRequest } from '../../actions';
 
 class HomePage extends Component {
+
+    componentDidMount(){
+        this.props.fetchAllProducts();
+    }
+
     render() {
         let { menus, products } = this.props;
         return (
@@ -51,9 +57,9 @@ class HomePage extends Component {
                     {this.showProductList(products, menus)}
 
                     <div className="clear" />
-                    
+
                     <Footer />
-                    
+
                 </div>
             </Fragment>
         );
@@ -79,4 +85,11 @@ const mapStateToProps = state => {
         products: state.products
     }
 }
-export default connect(mapStateToProps)(HomePage);
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        fetchAllProducts: () => {
+            dispatch(actFetchProductsRequest())
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);

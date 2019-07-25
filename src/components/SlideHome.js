@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class SlideHome extends Component {
     render() {
         return (
             <Fragment>
-                <div id="carouselExampleIndicators" className="col-xs-8 col-sm-8 col-md-8 col-lg-8 pr-0 pl-0 carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" className="col-xs-12 col-sm-12 col-md-12 col-lg-12 pr-0 pl-0 carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -32,11 +32,11 @@ class SlideHome extends Component {
                     </a>
                 </div>
 
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 pr-0 pl-0 banner-img">
+                {/* <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 pr-0 pl-0 banner-img">
                     <Link to="/#" target="_self">
                         <img src={process.env.PUBLIC_URL + '/img/banner/banner_300x300.jpg'} alt="banner_300x300" height="393px" width="100%" />
                     </Link>
-                </div>
+                </div> */}
             </Fragment>
         );
     }

@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 import Top from '../../components/Top';
 import Banner from '../../components/Banner';
 import Nav from '../../components/Nav';
-import SlideHome from '../../components/SlideHome';
 import Footer from '../../components/Footer';
 
 class LoginPage extends Component {
@@ -17,7 +16,6 @@ class LoginPage extends Component {
                         <Top />
                         <Banner />
                         <Nav />
-                        <SlideHome />
                     </div>
 
                     <h1>LOGIN</h1>

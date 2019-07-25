@@ -24,24 +24,19 @@ class ProductListPage extends Component {
                         <Banner />
                         <Nav />
                     </div>
-
-                    <div className="container-fluid product-category has-banner" style={{ background: 'url(//cdn.nhanh.vn/cdn/store1/42431/pc/ps_cate_1558005499_619.jpg) fixed center top' }} >
+                    <div
+                        className="container-fluid product-category has-banner"
+                        style={{ background: `url(${process.env.PUBLIC_URL + '/img/bg-product-list-page.jpg'}) fixed center top` }}
+                    >
                         <BreadCrumb url={url} category={category} product={null} isShowTitle={true} />
-
                         <div className="list-category clear row">
                             {this.showMenus(category, menus)}
                         </div>
-
                         <ListFilter />
-
                         <ProductList category={category} />
-
                     </div>
-
                     <div className="clear" />
-
                     <Footer />
-
                 </div>
             </Fragment>
         );

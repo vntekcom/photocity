@@ -21,10 +21,10 @@ class Footer extends Component {
                                     <strong>Kết nối với chúng tôi</strong>
                                 </p>
                                 <div className="social-foo">
-                                    <a target="_blank" href="https://www.facebook.com/"><span className="fab fa-facebook-f" /></a>
-                                    <a target="_blank" href="https://youtube.com/"><span className="fab fa-youtube" /></a>
-                                    <a target="_blank" href="https://www.instagram.com/"><span className="fab fa-instagram" /></a>
-                                    <a target="_blank" href="https://twitter.com"><span className="fab fa-twitter" /></a>
+                                    <a href="https://www.facebook.com/"><span className="fab fa-facebook-f" /></a>
+                                    <a href="https://youtube.com/"><span className="fab fa-youtube" /></a>
+                                    <a href="https://www.instagram.com/"><span className="fab fa-instagram" /></a>
+                                    <a href="https://twitter.com"><span className="fab fa-twitter" /></a>
                                 </div>
                             </div>
 

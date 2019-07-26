@@ -24,12 +24,10 @@ class Nav extends Component {
         // console.log(menus)
         return (
             <nav id="nav-hori">
-                <div className="container">
-                    <div id="nav-verti">
-                        <ul className="primary">
-                            {this.showMenu(menus)}
-                        </ul>
-                    </div>
+                <div id="nav-verti">
+                    <ul className="primary">
+                        {this.showMenu(menus)}
+                    </ul>
                 </div>
             </nav>
         );

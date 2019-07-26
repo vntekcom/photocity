@@ -27,9 +27,10 @@ class ProductListItem extends Component {
 
     render() {
         let { product } = this.props;
+        let { open } = this.state;
         let productPrice = product.price > 0 ? product.price.toLocaleString() : '';
         let productSRP = product.srp > 0 ? product.srp.toLocaleString() : '';
-        const { open } = this.state;
+        let priceElm = product.price > 0 ? `${productPrice}đ <span>${productSRP}đ</span>` : `${productSRP}đ`;
         return (
             <Fragment>
                 <li className="slideInLeft" data-wow-delay="0.04s">
@@ -57,7 +58,7 @@ class ProductListItem extends Component {
                         </div>
 
                         <div className="p_price">
-                            {productPrice} <span>{productSRP}</span>
+                            {Parser(priceElm)}
                         </div>
 
                         <div className="product-tip">
@@ -82,6 +83,7 @@ class ProductListItem extends Component {
                     </div>
                 </li>
 
+                {/* MODAL */}
                 <Modal open={open} onClose={this.onCloseModal} style={styles} center>
                     <div className="product-detail__left" id="header-position">
                         <div className="row">
@@ -90,16 +92,6 @@ class ProductListItem extends Component {
                                     <img className="full" src={product.image} alt={product.name} />
                                 </div>
                                 <div className="clearfix" />
-                                {/* <div className="quick-owl-row">
-                                    <div className="quick-owl owl-carousel owl-theme">
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/1_20171118132418_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/1_20171118132418_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/2_20171118132418_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/2_20171118132418_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/3_20171118132419_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/3_20171118132419_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/4_20171118132419_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/4_20171118132419_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/5_20171118132419_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/5_20171118132419_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                        <img className="full" src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/6_20171118132420_640x640.jpg" data-src="//cdn.nhanh.vn/cdn/store1/42431/ps/20190525/6_20171118132420_640x640.jpg" alt="Sony Alpha A7 II Body - (Chính hãng)" />
-                                    </div>
-                                </div> */}
                             </div>
                             <div className="col-md-7 col-sm-6 product-detail__info product-detail__info-block">
                                 <div className="hidden-xs">
@@ -116,11 +108,9 @@ class ProductListItem extends Component {
                                 </div>
                                 <div className="product-detail__price">
                                     <div className="product-detail__price-info">
-                                        <div>
-                                            <span className="text-red" style={{ fontSize: '45px' }}>{productPrice} </span>
-                                            <span className="strike">{productSRP}</span>
+                                        <div className="p_price text-25">
+                                            {Parser(priceElm)}
                                         </div>
-
                                         {/* <div className="discount__meta">
                                             <span className="price-info__discount"> -25% </span>
                                         </div> */}

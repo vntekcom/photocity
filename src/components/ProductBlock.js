@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import ProductBlockItem from './ProductBlockItem';
 
 class ProductBlock extends Component {
     render() {
         let { category, productCount, products, menus } = this.props;
-        console.log()
         return (
             <div className="floor">
                 <div className="title-product-list">
@@ -21,7 +19,7 @@ class ProductBlock extends Component {
 
                 <div className="full">
                     <div className="product-list home">
-                        <ul className="list">
+                        <ul className="list" style={{ paddingLeft: '25px' }}>
                             {this.showProducts(category, products)}
                         </ul>
                     </div>
@@ -34,6 +32,7 @@ class ProductBlock extends Component {
         var result = null;
         result = products
             .filter(product => product.category === category.toLowerCase())
+            .slice(0, 10)
             .map((product, index) => {
                 return <ProductBlockItem
                     key={index}
@@ -47,7 +46,7 @@ class ProductBlock extends Component {
     showMenus = (category, menus) => {
         var subMenu = null;
         menus
-            .filter(menu => menu.label.toLowerCase()===category.toLowerCase())
+            .filter(menu => menu.label.toLowerCase() === category.toLowerCase())
             .map(menu => {
                 subMenu = menu.subCategory.map((sub, index) => {
                     return (
@@ -62,11 +61,4 @@ class ProductBlock extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        products: state.products,
-        menus: state.menus
-    }
-}
-
-export default connect(mapStateToProps, null)(ProductBlock);
+export default ProductBlock;

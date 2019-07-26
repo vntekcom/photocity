@@ -1,10 +1,10 @@
 import React from 'react';
-import HomePage from './pages/HomePage/HomePage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import FavoritePage from './pages/FavoritePage/FavoritePage';
-import ProductListPage from './pages/ProductListPage/ProductListPage';
-import ProductItemPage from './pages/ProductItemPage/ProductItemPage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import FavoritePage from './pages/FavoritePage';
+import ProductListPage from './pages/ProductListPage';
+import ProductItemPage from './pages/ProductItemPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const routes = [
     {

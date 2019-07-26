@@ -21,12 +21,14 @@ class Top extends Component {
                     <Slider>
                         <Slide index={0}>
                             <Link to="" className="text-info">
-                                <i class="far fa-flag"></i> Zhiyun smooth 4 giảm giá sâu sập sàn!
+                                Zhiyun smooth 4 giảm giá sâu sập sàn! 
+                                <img src={process.env.PUBLIC_URL + '/img/hot.png'} class="img-responsive" alt="hot icon" style={{width:'30px'}} />
                             </Link>
                         </Slide>
                         <Slide index={1}>
                             <Link to="" className="text-info">
-                                <i class="far fa-flag"></i> Feiyu Vlog Pocket sản phẩm hót nhất 2019
+                                Feiyu Vlog Pocket sản phẩm hót nhất 2019
+                                <img src={process.env.PUBLIC_URL + '/img/hot.png'} class="img-responsive" alt="hot icon" style={{width:'30px'}} />
                             </Link>
                         </Slide>
                     </Slider>
@@ -34,6 +36,7 @@ class Top extends Component {
 
                 <div className="social">
                     <div className="in ico">
+                    
                         <Link to="/user/login" title="Đăng nhập">
                             <button type="button" className="btn btn-info"><i className="fas fa-user" /> Đăng nhập</button>
                         </Link>

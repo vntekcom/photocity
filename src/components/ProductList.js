@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ListSort from './ListSort';
-import ProductListItem from './ProductListItem';
 
 class ProductList extends Component {
     render() {
-        let { products, category } = this.props;
         return (
             <div id="content">
                 <ListSort />
                 <div className="product-list page">
                     <ul className="list">
-                        {this.showProducts(category, products)}
+                        {this.props.children}
                     </ul>
                 </div>
                 <div className="clear space10px" />
@@ -44,26 +41,6 @@ class ProductList extends Component {
             </div>
         );
     }
-
-    showProducts(category, products) {
-        var result = null;
-        result = products
-            .filter(product => product.category === category)
-            .map((product, index) => {
-                return <ProductListItem
-                    key={index}
-                    product={product}
-                    index={index}
-                />
-            })
-        return result;
-    }
 }
 
-const mapStateToProps = state => {
-    return {
-        products: state.products
-    }
-}
-
-export default connect(mapStateToProps, null)(ProductList);
+export default ProductList;

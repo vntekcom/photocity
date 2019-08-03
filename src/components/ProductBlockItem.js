@@ -19,11 +19,11 @@ class ProductBlockItem extends Component {
                             <i className="icon_new">New</i>
                         </div> */}
 
-                        <Link to={`/${product.category}/${product.slug}/${product.id}`} className="p-img">
+                        <Link to={`/${product.category}/${product.slug}/${product._id}`} className="p-img">
                             <img data-sizes="auto" className="lazyload" src={product.image} alt={product.name} />
                         </Link>
 
-                        <Link to={`/${product.category}/${product.slug}/${product.id}`} className="p-name" >
+                        <Link to={`/${product.category}/${product.slug}/${product._id}`} className="p-name" >
                             {product.name}
                         </Link>
 
@@ -34,7 +34,7 @@ class ProductBlockItem extends Component {
                         <div className="p_price">
                             {Parser(priceElm)}
                         </div>
-                        
+
                     </div>
                 </li>
             </Fragment>
@@ -44,10 +44,10 @@ class ProductBlockItem extends Component {
     showRating = rating => {
         var result = [];
         for (var i = 1; i <= rating; i++) {
-            result.push(<i className="fas fa-star"></i>);
+            result.push(<i className="fas fa-star" key={i}></i>);
         }
         for (var j = 1; j <= (5 - rating); j++) {
-            result.push(<i className="far fa-star"></i>);
+            result.push(<i className="far fa-star" key={i + j}></i>);
         }
         return result;
     }

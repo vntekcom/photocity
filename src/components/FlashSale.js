@@ -6,7 +6,7 @@ class FlashSale extends Component {
             <div className="top-product-home product-list">
                 <div className="flash-sale box fr">
                     <span className="label">
-                        <i class="fas fa-bolt fa-2x"></i>
+                        <i className="fas fa-bolt fa-2x"></i>
                     </span>
                     <div className="title robot">
                         <span>Flash sale</span>

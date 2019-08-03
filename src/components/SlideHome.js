@@ -13,10 +13,10 @@ class SlideHome extends Component {
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src={process.env.PUBLIC_URL + '/img/banner/master_slide_1.jpg'} alt="banner 1 photocity" />
+                            <img className="d-block w-100" src={process.env.PUBLIC_URL + '/img/banner/master_slide_2.jpg'} alt="banner 1 photocity" />
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={process.env.PUBLIC_URL + '/img/banner/master_slide_2.jpg'} alt="banner 2 photocity" />
+                            <img className="d-block w-100" src={process.env.PUBLIC_URL + '/img/banner/master_slide_1.jpg'} alt="banner 2 photocity" />
                         </div>
                         <div className="carousel-item">
                             <img className="d-block w-100" src={process.env.PUBLIC_URL + '/img/banner/master_slide_3.jpg'} alt="banner 3 photocity" />

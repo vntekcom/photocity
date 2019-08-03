@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import FavoritePage from './pages/FavoritePage';
 import ProductListPage from './pages/ProductListPage';
 import ProductItemPage from './pages/ProductItemPage';
+import CartPage from './pages/CartPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const routes = [
@@ -11,6 +12,16 @@ const routes = [
         path:'/',
         exact: true,
         main: ({match}) => <HomePage match={match} />
+    },
+    {
+        path:'/cart',
+        exact: true,
+        main: ({match}) => <CartPage match={match} />
+    },
+    {
+        path:'/:category',
+        exact: true,
+        main: ({match}) => <ProductListPage match={match} />
     },
     {
         path:'/user/login',
@@ -23,12 +34,7 @@ const routes = [
         main: ({match}) => <FavoritePage match={match} />
     },
     {
-        path:'/:category',
-        exact: true,
-        main: ({match}) => <ProductListPage match={match} />
-    },
-    {
-        path:`/:category/:product/:id`,
+        path:'/:category/:product/:id',
         exact: true,
         main: ({match}) => <ProductItemPage match={match} />
     },
@@ -36,7 +42,7 @@ const routes = [
         path:'',
         exact: false,
         main: () => <NotFoundPage />
-    }
+    }    
 ]
 
 export default routes;

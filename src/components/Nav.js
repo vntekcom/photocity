@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Route } from "react-router-dom";
+import { actFetchMenusRequest } from './../actions/index';
 
 const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
     return (
@@ -19,9 +20,13 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
 }
 
 class Nav extends Component {
+
+    componentDidMount() {
+        this.props.fetchAllMenus();
+    }
+
     render() {
         let { menus } = this.props;
-        // console.log(menus)
         return (
             <nav id="nav-hori">
                 <div id="nav-verti">
@@ -57,5 +62,11 @@ const mapStateToProps = state => {
         menus: state.menus
     }
 }
-
-export default connect(mapStateToProps)(Nav);
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchAllMenus: () => {
+            dispatch(actFetchMenusRequest())
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

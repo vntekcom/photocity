@@ -37372,7 +37372,7 @@ li.fancybox-thumbs-loading {
 	animation-name: slideInDown
 }
 
-@-webkit-keyframes slideInLeft {
+/* @-webkit-keyframes slideInLeft {
 	0% {
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
@@ -37382,9 +37382,9 @@ li.fancybox-thumbs-loading {
 		-webkit-transform: translateX(0);
 		transform: translateX(0)
 	}
-}
+} */
 
-@keyframes slideInLeft {
+/* @keyframes slideInLeft {
 	0% {
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
@@ -37394,12 +37394,12 @@ li.fancybox-thumbs-loading {
 		-webkit-transform: translateX(0);
 		transform: translateX(0)
 	}
-}
+} */
 
-.slideInLeft {
+/* .slideInLeft {
 	-webkit-animation-name: slideInLeft;
 	animation-name: slideInLeft
-}
+} */
 
 @-webkit-keyframes slideInRight {
 	0% {
@@ -41133,7 +41133,7 @@ img {
 
 #cart_top {
 	line-height: 40px;
-	position: absolute;
+	/* position: absolute; */
 	right: 0;
 	top: 15px;
 	padding: 0;
@@ -41277,12 +41277,12 @@ header .container {
 }
 
 #search {
-	position: absolute;
-	right: 260px;
+	/* position: absolute; */
+	/* right: 260px; */
 	top: 15px;
-	height: 40px;
-	width: 620px;
-	color: #fff;
+	/* height: 40px; */
+	/* width: 620px; */
+	/* color: #fff; */
 	background: 0 0
 }
 
@@ -41331,7 +41331,7 @@ header .container {
 	padding: 3px 0 0 10px
 }
 
-#submit-search {
+/* #submit-search {
 	width: 88px;
 	height: 30px;
 	border: 0;
@@ -41340,7 +41340,7 @@ header .container {
 	right: 0;
 	top: 0;
 	padding: 8px
-}
+} */
 
 #search .fa-search {
 	position: absolute;
@@ -42447,13 +42447,13 @@ footer {
 	position: relative
 }
 
-.product-list:not(.home) li:nth-child(4n+1),
+.product-list:not(.home) li:nth-child(4n+1), /* custom */
 .product-list.home li:nth-child(5n+1) {
 	clear: both
 }
 
-.p_container {
-	width: 212px;
+.p_container { /* custom */
+	width: 222px;
 	position: relative
 }
 
@@ -42734,7 +42734,8 @@ footer {
 }
 
 .product-list.home .p_container {
-	width: 250px
+	width: 250px;
+	min-height: 250px;
 }
 
 .col1 .product-list.home .p_container {
@@ -43436,9 +43437,9 @@ span.title-tooltip-attribute:before {
 	margin: 0
 }
 
-.top-product-home .p_container {
+/* .top-product-home .p_container {
 	width: 193px
-}
+} */
 
 .top-product-home .p-img {
 	width: 193px
@@ -45430,7 +45431,7 @@ td.txt_left {
 	text-align: center;
 	margin-left: 10px;
 	width: 60px;
-	text-align: center
+	height: 40px;
 }
 
 .buynow_popup .btn-blue {
@@ -48103,4 +48104,11 @@ footer p {
 
 .strike{
 	text-decoration: Line-Through
+}
+
+.buynow_popup {
+    width: 100% !important;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
 }

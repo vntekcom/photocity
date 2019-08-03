@@ -9,6 +9,7 @@ class App extends Component {
     render() {
         return (
             <Router>
+
                 <BrowserView>
                     <Switch>
                         {this.showMenu(routes)}
@@ -16,11 +17,16 @@ class App extends Component {
                 </BrowserView>
 
                 <MobileView>
-                    <h1 className="tex-center">
-                        UNDER CONSTRUCTION <br></br>
-                        This is mobile template!
-                    </h1>
+                    <div className="container-fluid">
+                        <p className="display-5">PHOTOCITY ON MOBILE</p>
+                        <img src={process.env.PUBLIC_URL + '/img/google-play.png'} className="mr-2" alt="google play" />
+                        <img src={process.env.PUBLIC_URL + '/img/app-store.png'} className="" alt="app store" />
+                        <div style={{ bottom: '10px', padding: 0, position: 'fixed', right: '10px', zIndex: 9999 }}>
+                            <img src={process.env.PUBLIC_URL + '/img/under-construction.png'} alt="under construction" width="200px" />
+                        </div>
+                    </div>
                 </MobileView>
+
             </Router>
         );
     }

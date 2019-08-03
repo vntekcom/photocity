@@ -28,33 +28,27 @@ class ProductListItem extends Component {
     render() {
         let { product } = this.props;
         let { open } = this.state;
-        let productPrice = product.price > 0 ? product.price.toLocaleString() : '';
-        let productSRP = product.srp > 0 ? product.srp.toLocaleString() : '';
-        let priceElm = product.price > 0 ? `${productPrice}đ <span>${productSRP}đ</span>` : `${productSRP}đ`;
+        let priceElm = product.price > 0 ? `${product.price.toLocaleString()} <span>${product.srp.toLocaleString()}</span>` : `${product.srp.toLocaleString()}`;
         return (
             <Fragment>
-                <li className="slideInLeft" data-wow-delay="0.04s">
-                    <div className="p_container">
+                <li>
+                    <div className="p_container" style={{ height: '280px' }}>
 
                         {/* <div className="option">
                             <i className="gift"><i class="fas fa-gift"></i> QUÀ TẶNG</i>
                             <i className="off">-11%</i>
                         </div> */}
 
-                        <Link to={`/${product.category}/${product.slug}/${product.id}`} title={product.name} className="p-img" >
+                        <Link to={`/${product.category[0]}/${product.slug}/${product._id}`} title={product.name} className="p-img" >
                             <img src={product.image} alt={product.name} data-sizes="auto" className="lazyautosizes lazyloaded" sizes="180px" />
                         </Link>
 
-                        <Link to={`/${product.category}/${product.slug}/${product.id}`} >
+                        <Link to={`/${product.category[0]}/${product.slug}/${product._id}`} >
                             {product.name}
                         </Link>
 
                         <div className="text-warning text-20" >
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star-half-alt"></i>
-                            <i className="far fa-star"></i>
+                            {this.showRating(product.rating)}
                         </div>
 
                         <div className="p_price">
@@ -66,13 +60,13 @@ class ProductListItem extends Component {
                                 {Parser(product.description)}
                             </div> */}
 
-                            <Link to={`/${product.category}/${product.slug}/${product.id}`} className="act js-add-cart">
+                            <Link to={`/${product.category[0]}/${product.slug}/${product._id}`} className="act js-add-cart">
                                 <span>Mua Ngay</span>
                             </Link>
                         </div>
 
                         <div className="js-quick-button-group">
-                            <button className="js-add-to-cart"  >
+                            <button className="js-add-to-cart" onClick={() => this.props.onAddToCart(product)} >
                                 <i className="fa fa-shopping-cart" />
                             </button>
 
@@ -121,24 +115,34 @@ class ProductListItem extends Component {
                                     <div className="p-3 mb-2 bg-secondary text-white">
                                         {Parser(product.description)}
                                     </div>
-                                    <div className="d-quantiy-changer p-b-12">
+                                    {/* <div className="d-quantiy-changer p-b-12">
                                         <div className="txt-level-count-stock">Số lượng:</div>
                                         <div className="qty-cart-product-box">
                                             <input type="number" defaultValue={1} min={1} max={100} className="form-control" />
                                         </div>
-                                        {/* <div className="txt-total-stock"> (Còn 5000 sản phẩm)</div> */}
-                                    </div>
-                                    <div className="qty-alert alert alert-warning" />
+                                        <div className="txt-total-stock"> (Còn 5000 sản phẩm)</div>
+                                    </div> */}
+
                                     <div className="clearfix" />
+
                                     <div className="row">
+
                                         <div className="col-md-6 col-sm-6 col-xs-12">
-                                            <div id="quickToCheckout" className="btn btn-modal-quick btn-default full " title data-original-title>
-                                                Mua ngay</div>
+                                            <div
+                                                id="quickToCheckout"
+                                                className="btn btn-modal-quick btn-default full "
+                                                title data-original-title
+                                                onClick={() => this.onAddToCart(product)}
+                                            >
+                                                Đặt mua
+                                            </div>
                                         </div>
+
                                         {/* <div className="col-md-6 col-sm-6 col-xs-12">
                                             <div id="quickToCart" className="btn btn-modal-quick btn-default full " data-psid={14246742} data-selid={14246742} title data-ck={1} data-original-title>
                                                 Thêm vào giỏ hàng</div>
                                         </div> */}
+
                                     </div>
                                 </div>
                             </div>
@@ -148,6 +152,21 @@ class ProductListItem extends Component {
 
             </Fragment>
         );
+    }
+
+    showRating = rating => {
+        var result = [];
+        for (var i = 1; i <= rating; i++) {
+            result.push(<i className="fas fa-star" key={i}></i>);
+        }
+        for (var j = 1; j <= (5 - rating); j++) {
+            result.push(<i className="far fa-star" key={i + j}></i>);
+        }
+        return result;
+    }
+
+    onAddToCart = product => {
+        this.props.onAddToCart(product)
     }
 }
 

@@ -11,7 +11,7 @@ class FlashSaleItem extends Component {
         let productDiscount = (product.srp - product.price).toLocaleString();
         return (
             <div className="col-md-2 col-sm-2 col-xs-2">
-                <Link to={`${product.category}/${product.slug}/${product.id}`} className="p-img">
+                <Link to={`${product.category}/${product.slug}/${product._id}`} className="p-img">
                     <img
                         src={product.image}
                         alt={product.name}
@@ -35,10 +35,10 @@ class FlashSaleItem extends Component {
     showRating = rating => {
         var result = [];
         for (var i = 1; i <= rating; i++) {
-            result.push(<i className="fas fa-star"></i>);
+            result.push(<i className="fas fa-star" key={i}></i>);
         }
         for (var j = 1; j <= (5 - rating); j++) {
-            result.push(<i className="far fa-star"></i>);
+            result.push(<i className="far fa-star" key={i+j}></i>);
         }
         return result;
     }

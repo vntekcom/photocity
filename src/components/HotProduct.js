@@ -7,7 +7,7 @@ class HotProduct extends Component {
             <div className="container-fluid top-product-home product-list">
                 <div className="box fr">
                     <span className="label">
-                    <i class="fab fa-hotjar fa-2x"></i>
+                    <i className="fab fa-hotjar fa-2x"></i>
                     </span>
                     <div className="title robot">
                         <span>Sản phẩm bán chạy</span>

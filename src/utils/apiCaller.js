@@ -6,5 +6,6 @@ export default function CallApi(endpoint, method = 'GET', body) {
         method: method,
         url: `${Config.API_URL}/${endpoint}`,
         data: body
-    }).catch(err => console.log(err))
+    })
+    .catch(err => console.log(err))
 };

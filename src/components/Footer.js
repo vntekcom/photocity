@@ -19,17 +19,17 @@ class Footer extends Component {
                                 <strong>Kết nối với chúng tôi</strong>
                             </p>
                             <div className="social-foo">
-                                <a href="https://www.facebook.com/"><span className="fab fa-facebook-f" /></a>
-                                <a href="https://youtube.com/"><span className="fab fa-youtube" /></a>
-                                <a href="https://www.instagram.com/"><span className="fab fa-instagram" /></a>
-                                <a href="https://twitter.com"><span className="fab fa-twitter" /></a>
+                                <a href="//www.facebook.com/michiostore2020" target="_black"><span className="fab fa-facebook-f" /></a>
+                                <a href="https://youtube.com/" target="_black"><span className="fab fa-youtube" /></a>
+                                <a href="https://www.instagram.com/" target="_black"><span className="fab fa-instagram" /></a>
+                                <a href="https://twitter.com" target="_black"><span className="fab fa-twitter" /></a>
                             </div>
                         </div>
 
                         <div className="col-sm-6 col-md-3">
-                            <Link to="/" className="link-img">
+                            {/* <Link to="/" className="link-img">
                                 <img className="img-responsive" src="//cdn.nhanh.vn/cdn/boCongThuong.png" alt="da dang ky bo cong thuong" />
-                            </Link>
+                            </Link> */}
                         </div>
 
                     </div>
@@ -41,60 +41,57 @@ class Footer extends Component {
                             <strong className="title">HƯỚNG DẪN</strong>
                             <ul>
                                 <li>
-                                    <Link to="/" title="Hướng dẫn sử dụng">Hướng dẫn sử dụng</Link>
+                                    <Link to="/giao-hang" title="Chính sách giao hàng">Giao hàng</Link>
                                 </li>
                                 <li>
-                                    <Link to="/" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</Link>
+                                    <Link to="/thanh-toan" title="Hướng dẫn thanh toán">Thanh toán</Link>
                                 </li>
-                                <li>
-                                    <Link to="/" title="Hướng dẫn đổi trả hàng">Hướng dẫn đổi trả hàng</Link>
-                                </li>
+
                             </ul>
                         </div>
 
                         <div className="col-sm-6 col-md-3">
-                            <strong className="title">Chăm sóc khách hàng</strong>
+                            <strong className="title">CHÍNH SÁCH</strong>
                             <ul>
+                                
                                 <li>
-                                    <Link to="/" title="Chính sách giao hàng">Chính sách giao hàng</Link>
+                                    <Link to="/bao-hanh" title="Chính sách bảo hành">Bảo hành</Link>
                                 </li>
                                 <li>
-                                    <Link to="/" title="Chính sách đổi trả">Chính sách đổi trả</Link>
+                                    <Link to="/tra-hang" title="Hướng dẫn đổi trả hàng">Trả hàng</Link>
                                 </li>
-                                <li>
-                                    <Link to="/" title="Chính sách bảo hành">Chính sách bảo hành</Link>
-                                </li>
-                                <li>
-                                    <Link to="/" title="Câu hỏi thường gặp ">Câu hỏi thường gặp </Link>
-                                </li>
+
                             </ul>
                         </div>
 
                         <div className="col-sm-6 col-md-3">
-                            <strong className="title">Chăm sóc khách hàng</strong>
+                            <strong className="title">CHĂM SÓC KHÁCH HÀNG</strong>
                             <ol>
-                                <li>Email: support@photocity.vn
-                                    <span />
+                                <li>
+                                    <Link to="/lien-he" title="Câu hỏi thường gặp ">Liên hệ</Link>
                                 </li>
-                                <li>Giờ làm việc: 8h - 17h
-                                    <span />
-                                </li>
+                                <li>Email: admin@michiogroup.com</li>
+                                <li>Giờ làm việc: 8h - 17h</li>
                             </ol>
                         </div>
 
                         <div className="col-sm-6 col-md-3">
-                            <strong className="title">Công ty TNHH DREAM-FLY</strong>
+                            <strong className="title">CTY TNHH CÔNG NGHỆ VÀ TRUYỀN THÔNG MICHIO</strong>
                             <div className="clearfix" />
                             <p style={{ color: 'rgb(130,130,130)', padding: '2px 0px' }}>
-                                <span style={{ color: '#000000' }}>
-                                    MST: 0314180667
-                                </span>
+                                <span style={{ color: '#000000' }}>MST: 0316187393 - Điện thoại: 0703 120 226</span>
                             </p>
-                            <ol style={{ marginTop: '0px', marginBottom: '10.5px', listStyleType: 'none', paddingLeft: '0px', color: 'rgb(48,48,48)', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '14px' }}>
+                            <p style={{ color: 'rgb(130,130,130)', padding: '2px 0px' }}>
+                                <span style={{ color: '#000000' }}>Địa chỉ: 149/44 Luỹ Bán Bích, Phường Tân Thới Hoà, Quận Tân Phú, Thành phố Hồ Chí Minh </span>
+                            </p>
+                            <p style={{ color: 'rgb(130,130,130)', padding: '2px 0px' }}>
+                                <span style={{ color: '#000000' }}> Người đại diện theo Pháp luật: Ông Nguyễn Quốc Phong</span>
+                            </p>
+                            {/* <ol style={{ marginTop: '0px', marginBottom: '10.5px', listStyleType: 'none', paddingLeft: '0px', color: 'rgb(48,48,48)', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '14px' }}>
                                 <li style={{ color: 'rgb(130,130,130)', padding: '2px 0px' }}>
-                                    <span style={{ color: '#000000' }}>Hotline: (028) 38-440-797</span>
+                                    <span style={{ color: '#000000' }}>Hotline: 0703 120 226</span>
                                 </li>
-                            </ol>
+                            </ol> */}
                         </div>
 
                     </div>
@@ -102,15 +99,16 @@ class Footer extends Component {
 
                 <div className="copy-right">
                     <div className="text-copy-right">
-                        <p className="display-5">PHOTOCITY ON MOBILE</p>
+                        <p className="display-5">MICHIO ON MOBILE</p>
                         <img src={process.env.PUBLIC_URL + '/img/google-play.png'} className="img-responsive mr-2" alt="google play" />
                         <img src={process.env.PUBLIC_URL + '/img/app-store.png'} className="img-responsive" alt="app store" />
                     </div>
                 </div>
 
-                <div style={{ bottom: '10px', padding: 0, position: 'fixed', right: '10px', zIndex: 9999 }}>
+                {/* <div style={{ bottom: '10px', padding: 0, position: 'fixed', right: '10px', zIndex: 9999 }}>
                     <img src={process.env.PUBLIC_URL + '/img/under-construction.png'} alt="under construction" width="200px" />
-                </div>
+                </div> */}
+
             </footer>
         );
     }

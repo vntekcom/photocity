@@ -10,7 +10,7 @@ class Banner extends Component {
                     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                         <Link to="/" >
                             <div className="format inline-block">
-                                <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="Photocity" />
+                                <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="Photocity" width="80"/>
                             </div>
                         </Link>
                     </div>
